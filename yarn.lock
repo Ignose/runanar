@@ -2280,7 +2280,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-libram@npm:^0.4.21":
+"eslint-plugin-libram@npm:^0.4.31":
   version: 0.4.31
   resolution: "eslint-plugin-libram@npm:0.4.31"
   dependencies:
@@ -3392,7 +3392,7 @@ __metadata:
     esbuild: "npm:^0.24.2"
     esbuild-plugin-babel: "npm:^0.2.3"
     eslint: "npm:^9.17.0"
-    eslint-plugin-libram: "npm:^0.4.21"
+    eslint-plugin-libram: "npm:^0.4.31"
     grimoire-kolmafia: "npm:^0.3.33"
     kolmafia: "npm:^5.28673.0"
     libram: "npm:^0.11.7"
