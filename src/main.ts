@@ -4,6 +4,7 @@ import {
   getShop,
   putShop,
   retrieveItem,
+  retrievePrice,
   repriceShop,
 } from "kolmafia";
 import { $items } from "libram";
@@ -35,6 +36,7 @@ export default function main(command?: string): void {
       const quantity = shop[i.name] ?? 0;
       if (quantity < 33) {
         const needed = 33 - quantity;
+        if (retrievePrice(i) > 500_000) throw `${i} was too expensive, check what went wrong!`
         retrieveItem(needed, i);
         putShop(999_999_999_999, 1, needed, i);
       }
