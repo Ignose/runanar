@@ -1,11 +1,11 @@
 import { Args } from "grimoire-kolmafia";
 import {
-  Item,
   getShop,
+  Item,
   putShop,
+  repriceShop,
   retrieveItem,
   retrievePrice,
-  repriceShop,
 } from "kolmafia";
 import { $items } from "libram";
 
@@ -27,7 +27,7 @@ export default function main(command?: string): void {
     if (quantity < num) {
       putShop(100, 1, num, theItem);
     } else {
-      repriceShop(theItem, 100);
+      repriceShop(100, theItem);
     }
   } else {
     // Stock all items in `items` up to 33
@@ -44,7 +44,7 @@ export default function main(command?: string): void {
   }
 }
 
-const items = $items`Ambitious Turkey, bad rum and good cola, battery (car), beastly paste, black snowcone, blue snowcone, blood sausage, blood-drive sticker, blue mana, blue snowcone, blue-frosted astral cupcake, borrowed time, box of familiar jacks, boxing day pass, breakfast miracle, bucket of wine, chlorophyll paste, chocolate stolen accordion, 11-leaf clover, affirmation cookie, cloaca cola polar, cold hi meain, cold-filtered water, counterfeit city, crimboysters rockefeller, crystallized pumpkin spice, CSA all-purpose soap, cuppa royal tea, cuppa sobrie tea, cuppa voraci tea, cybeer, cyburger, cyclops eyedrops, daily affirmation: always be collecting, daily affirmation: keep free hate in your heart, Daily Affirmation: Think Win-Lose, day shortener, demonic paste, doc clock's thyme cocktail, dreadsylvanian cold pocket, dreadsylvanian dank and stormy, dreadsylvanian hot pocket, dreadsylvanian sleaze pocket, dreadsylvanian slithery nipple, dreadsylvanian spooky pocket, dreadsylvanian stink pocket, dream of a dog, ectoplasmic paste, elemental paste, emergency margarita, essential tofu, extra time, extra-greasy slider, fancy chocolate, fantasyrealm guest pass, fish juice box, five second energy, frost flower, frosty's frosty mug, gene tonic: elemental, gene tonic: humanoid, gift card`;
+const items = $items`Ambitious Turkey, bad rum and good cola, battery (car), beastly paste, black snowcone, blue snowcone, blood sausage, blood-drive sticker, blue mana, blue snowcone, blue-frosted astral cupcake, borrowed time, box of Familiar Jacks, Boxing Day Pass, breakfast miracle, bucket of wine, chlorophyll paste, chocolate stolen accordion, 11-leaf clover, Affirmation Cookie, Cloaca Cola Polar, cold hi mein, cold-filtered water, counterfeit city, Crimboysters Rockefeller, crystallized pumpkin spice, CSA all-purpose soap, cuppa Royal tea, cuppa Sobrie tea, cuppa Voraci tea, cybeer, cyburger, cyclops eyedrops, Daily Affirmation: Always be Collecting, Daily Affirmation: Keep Free Hate in your Heart, Daily Affirmation: Think Win-Lose, day shortener, demonic paste, Doc Clock's thyme cocktail, Dreadsylvanian cold pocket, Dreadsylvanian dank and stormy, Dreadsylvanian hot pocket, Dreadsylvanian sleaze pocket, Dreadsylvanian slithery nipple, Dreadsylvanian spooky pocket, Dreadsylvanian stink pocket, dream of a dog, ectoplasmic paste, elemental paste, emergency margarita, essential tofu, extra time, extra-greasy slider, fancy chocolate, FantasyRealm guest pass, fish juice box, Five Second Energy™, frost flower, Frosty's frosty mug, Gene Tonic: Elemental, Gene Tonic: Humanoid, gift card`;
 
 const args = Args.create("Run_An_AR", "Be good, be kind", {
   item: Args.item({
