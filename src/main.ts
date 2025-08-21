@@ -1,12 +1,5 @@
 import { Args } from "grimoire-kolmafia";
-import {
-  getShop,
-  Item,
-  putShop,
-  repriceShop,
-  retrieveItem,
-  retrievePrice,
-} from "kolmafia";
+import { getShop, Item, putShop, repriceShop, retrieveItem, retrievePrice } from "kolmafia";
 import { $items } from "libram";
 
 export default function main(command?: string): void {
@@ -15,10 +8,7 @@ export default function main(command?: string): void {
   const num = args.number;
 
   // pick specific item or random one if none provided
-  const theItem =
-    it !== Item.none
-      ? it
-      : items[Math.floor(Math.random() * items.length)];
+  const theItem = it !== Item.none ? it : items[Math.floor(Math.random() * items.length)];
 
   if (!args.stock) {
     const shop = getShop();
@@ -36,7 +26,7 @@ export default function main(command?: string): void {
       const quantity = shop[i.name] ?? 0;
       if (quantity < 33) {
         const needed = 33 - quantity;
-        if (retrievePrice(i) > 500_000) throw `${i} was too expensive, check what went wrong!`
+        if (retrievePrice(i) > 500_000) throw `${i} was too expensive, check what went wrong!`;
         retrieveItem(needed, i);
         putShop(999_999_999_999, 1, needed, i);
       }

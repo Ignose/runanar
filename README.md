@@ -1,4 +1,3 @@
-
 ``git checkout Ignose/runanar release```
 
-use ```runanar help``` for help
+use `runanar help` for help
